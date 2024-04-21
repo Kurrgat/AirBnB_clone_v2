@@ -28,7 +28,9 @@ def display_c(text):
 @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_python(text):
-    """Route that displays 'Python ', followed by the value of the text variable."""
+    """
+    Route that displays 'Python ', followed by the value of the text variable.
+    """
     return 'Python {}'.format(text.replace('_', ' '))
 
 
@@ -40,7 +42,10 @@ def display_number(n):
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def display_number_template(n):
-    """Route that displays an HTML page with 'Number: n' inside an H1 tag if n is an integer."""
+    """
+    Route that displays an HTML page with 'Number: n'
+    inside an H1 tag if n is an integer.
+    """
     if isinstance(n, int):
         return render_template_string('<!DOCTYPE html>\n'
                                       '<HTML lang="en">\n'
